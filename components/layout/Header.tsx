@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { siteConfig } from "@/lib/site";
 import { Container } from "./Container";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export function Header() {

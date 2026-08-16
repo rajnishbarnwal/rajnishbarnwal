@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { siteConfig } from "@/lib/site";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { Card, CardTitle, CardDescription } from "@/components/ui/card";
 import { Calendar, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -30,7 +30,7 @@ export function CalEmbed() {
           Or just book a time
         </h2>
         <p className="mt-1 text-[15px] text-[#57534E]">
-          Thirty minutes, no pitch. If I'm not the right person for the problem, I'll say so.
+          Thirty minutes, no pitch. If I&apos;m not the right person for the problem, I&apos;ll say so.
         </p>
       </div>
 
@@ -49,9 +49,9 @@ export function CalEmbed() {
               <Calendar className="h-6 w-6" />
             </div>
           </div>
-          <CardTitle className="text-[19px]">Direct Calendar Booking</CardTitle>
-          <CardDescription className="mt-2 max-w-[40ch] mx-auto text-[15px]">
-            Direct calendar scheduling is available for 30-minute discovery sessions.
+          <CardTitle className="text-[19px]">Request a discovery call</CardTitle>
+          <CardDescription className="mt-2 max-w-[42ch] mx-auto text-[15px]">
+            Send an email with a few times that work for you, or use the enquiry form. I will confirm a slot within one working day.
           </CardDescription>
           <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
             <Button asChild>
@@ -59,14 +59,11 @@ export function CalEmbed() {
                 href={`mailto:${siteConfig.email}?subject=Discovery%20Call%20Request`}
                 className="w-full sm:w-auto"
               >
-                Schedule via Email
+                Email for a slot
                 <ArrowUpRight className="ml-1 h-4 w-4" />
               </a>
             </Button>
           </div>
-          <p className="mt-4 text-[12px] text-[#A8A29E]">
-            Direct calendar integration (`NEXT_PUBLIC_CAL_USERNAME`) can be configured in environment variables.
-          </p>
         </Card>
       )}
     </div>

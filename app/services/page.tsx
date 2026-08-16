@@ -7,12 +7,15 @@ import { FAQ } from "@/components/sections/FAQ";
 import { CTABand } from "@/components/sections/CTABand";
 import { Button } from "@/components/ui/button";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
-import { Check, ArrowRight, Layers, Cpu, BarChart3, Network, ArrowUpRight } from "lucide-react";
+import { Check, ArrowRight, Layers, Cpu, BarChart3, Network } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Services — Digital Transformation Consulting",
   description:
     "Process automation with n8n, practical AI applications, MIS dashboards, and ERP integrations for mid-sized Indian companies.",
+  alternates: {
+    canonical: "/services",
+  },
 };
 
 export default function ServicesPage() {
@@ -151,7 +154,7 @@ export default function ServicesPage() {
               Digital transformation consulting
             </h1>
             <p className="text-[18px] sm:text-[20px] text-[#57534E] leading-relaxed">
-              Most companies don't need a transformation programme. They need four or five specific things fixed, in the right order. That's the work I do.
+              Most companies don&apos;t need a transformation programme. They need four or five specific things fixed, in the right order. That&apos;s the work I do.
             </p>
           </div>
         </Container>

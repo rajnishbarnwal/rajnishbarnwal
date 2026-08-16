@@ -4,7 +4,7 @@ import React, { useState, useTransition } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { submitContactForm, ContactFormData } from "@/lib/actions";
+import { submitContactForm } from "@/lib/actions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -106,7 +106,7 @@ export function ContactForm() {
           Message received
         </h3>
         <p className="mt-2 text-[16px] text-[#57534E] max-w-[44ch] mx-auto">
-          Thanks — I'll review your details and reply within one working day.
+          Thanks — I&apos;ll review your details and reply within one working day.
         </p>
         <div className="mt-6">
           <Button

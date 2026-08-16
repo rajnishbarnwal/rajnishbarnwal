@@ -12,7 +12,7 @@ interface PhotoPlaceholderProps {
 
 export function PhotoPlaceholder({
   className,
-  src = "/rajnish.jpg",
+  src,
   alt = "Rajnish Barnwal — Digital Transformation Consultant",
 }: PhotoPlaceholderProps) {
   const [hasError, setHasError] = useState(false);
@@ -24,7 +24,7 @@ export function PhotoPlaceholder({
         className
       )}
     >
-      {!hasError ? (
+      {src && !hasError ? (
         <Image
           src={src}
           alt={alt}

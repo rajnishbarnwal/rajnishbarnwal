@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "Writing — Systems, Automation & Operations",
   description:
     "Essays and practical insights on business process automation, build vs. buy decisions, MIS reporting, and digital adoption for Indian mid-sized companies.",
+  alternates: {
+    canonical: "/blog",
+  },
 };
 
 export default async function BlogIndexPage() {

@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: "Work — Case Studies & Implementations",
   description:
     "Real-world case studies in process automation, in-house HRMS software development, MIS reporting dashboards, and ERP integrations.",
+  alternates: {
+    canonical: "/work",
+  },
 };
 
 export default async function WorkIndexPage() {

@@ -7,7 +7,6 @@ import { Container } from "@/components/layout/Container";
 import { Prose } from "@/components/mdx/Prose";
 import { CTABand } from "@/components/sections/CTABand";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { getAllCaseStudies, getCaseStudyBySlug } from "@/lib/content";
 import { ArrowLeft, ArrowRight, Calendar, User, Building2 } from "lucide-react";
@@ -40,6 +39,9 @@ export async function generateMetadata({
   return {
     title: `${study.frontmatter.title} — Case Study`,
     description: study.frontmatter.summary,
+    alternates: {
+      canonical: `/work/${slug}`,
+    },
     openGraph: {
       title: `${study.frontmatter.title} — Case Study`,
       description: study.frontmatter.summary,

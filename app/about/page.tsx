@@ -1,19 +1,20 @@
 import React from "react";
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import { Timeline } from "@/components/sections/Timeline";
 import { CTABand } from "@/components/sections/CTABand";
-import { Badge } from "@/components/ui/badge";
 import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { siteConfig } from "@/lib/site";
-import { GraduationCap, Wrench, Languages, Building2 } from "lucide-react";
+import { GraduationCap, Wrench, Languages } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About — Background & Story",
   description:
     "From running an IT agency to leading IT and digitalisation at Shubham EPC. Background, career timeline, and philosophy of Rajnish Barnwal.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 export default function AboutPage() {
@@ -49,7 +50,7 @@ export default function AboutPage() {
               About Rajnish Barnwal
             </p>
             <h1 className="text-[34px] sm:text-[44px] lg:text-[50px] font-semibold text-[#0C0A09] tracking-[-0.03em] leading-[1.1] mb-8">
-              I build internal systems for companies that don't have a tech team.
+              I build internal systems for companies that don&apos;t have a tech team.
             </h1>
 
             {/* Prose Story */}

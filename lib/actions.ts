@@ -3,6 +3,7 @@
 import { z } from "zod";
 import { Resend } from "resend";
 import { headers } from "next/headers";
+import { siteConfig } from "@/lib/site";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Please enter your name"),
@@ -22,11 +23,22 @@ export type ActionState = {
   errors?: Record<string, string[]>;
 };
 
-// In-memory rate limiting (3 submissions per IP per hour)
+// In-memory rate limiting (3 submissions per IP per hour).
+// Note: This in-memory limiter operates per serverless instance and is therefore
+// not a hard guarantee across distributed Vercel serverless invocations. The honeypot
+// field and strict Zod schema validation serve as the primary defenses against spam.
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
 
 function checkRateLimit(ip: string): boolean {
   const now = Date.now();
+
+  // Evict expired entries on write to prevent unbounded memory growth
+  for (const [key, data] of rateLimitMap.entries()) {
+    if (now > data.resetTime) {
+      rateLimitMap.delete(key);
+    }
+  }
+
   const limitData = rateLimitMap.get(ip);
 
   if (!limitData || now > limitData.resetTime) {
@@ -92,20 +104,30 @@ export async function submitContactForm(
   // 4. Send email via Resend
   const { name, email, company, message } = validated.data;
   const apiKey = process.env.RESEND_API_KEY;
-  const toEmail = process.env.CONTACT_EMAIL || "officialrajnishmail@gmail.com";
+  const toEmail = process.env.CONTACT_EMAIL || siteConfig.email;
+  const fromEmail = process.env.RESEND_FROM_EMAIL || "Rajnish Website <onboarding@resend.dev>";
 
   if (!apiKey) {
-    // In dev / unconfigured mode, succeed gracefully without crashing
+    if (process.env.NODE_ENV !== "production") {
+      // In local development / non-production, succeed gracefully
+      return {
+        success: true,
+        message: "Thanks — I'll reply within one working day.",
+      };
+    }
+
+    // In production without an API key, log server error and fail explicitly
+    console.error("RESEND_API_KEY is not configured in production environment.");
     return {
-      success: true,
-      message: "Thanks — I'll reply within one working day.",
+      success: false,
+      message: `Enquiry service is currently unconfigured. Please email directly at ${siteConfig.email}.`,
     };
   }
 
   try {
     const resend = new Resend(apiKey);
     const result = await resend.emails.send({
-      from: "Rajnish Website <onboarding@resend.dev>",
+      from: fromEmail,
       to: [toEmail],
       replyTo: email,
       subject: `New enquiry from ${name} — digitalrajnish.com`,
@@ -113,9 +135,10 @@ export async function submitContactForm(
     });
 
     if (result.error) {
+      console.error("Resend API error:", result.error);
       return {
         success: false,
-        message: "Failed to send message via email gateway. Please email directly.",
+        message: `Failed to send message via email gateway. Please email directly at ${siteConfig.email}.`,
       };
     }
 
@@ -123,10 +146,11 @@ export async function submitContactForm(
       success: true,
       message: "Thanks — I'll reply within one working day.",
     };
-  } catch {
+  } catch (error) {
+    console.error("Unexpected error in submitContactForm:", error);
     return {
       success: false,
-      message: "An unexpected error occurred. Please reach out directly via email.",
+      message: `An unexpected error occurred. Please reach out directly via email at ${siteConfig.email}.`,
     };
   }
 }

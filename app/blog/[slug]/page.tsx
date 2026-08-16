@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { BreadcrumbJsonLd, BlogPostJsonLd } from "@/components/seo/JsonLd";
 import { getAllPosts, getPostBySlug } from "@/lib/content";
 import { siteConfig } from "@/lib/site";
-import { ArrowLeft, ArrowRight, Clock, Calendar, Share2 } from "lucide-react";
+import { ArrowLeft, ArrowRight, Clock, Calendar } from "lucide-react";
 
 interface BlogPostPageProps {
   params: Promise<{

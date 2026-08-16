@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: "Contact — Book a 30-Minute Discovery Call",
   description:
     "Get in touch with Rajnish Barnwal for digital transformation, n8n automation, MIS reporting, and systems consulting. Book a 30-minute introductory call.",
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 export default function ContactPage() {
@@ -31,10 +34,10 @@ export default function ContactPage() {
               Direct Contact & Scheduling
             </p>
             <h1 className="text-[34px] sm:text-[46px] lg:text-[52px] font-semibold text-[#0C0A09] tracking-[-0.03em] leading-[1.1] mb-6">
-              Let's talk about your operations.
+              Let&apos;s talk about your operations.
             </h1>
             <p className="text-[18px] sm:text-[20px] text-[#57534E] leading-relaxed">
-              Whether you have a specific workflow bottleneck or need a second opinion on software architecture, bring one problem and we'll look at it together.
+              Whether you have a specific workflow bottleneck or need a second opinion on software architecture, bring one problem and we&apos;ll look at it together.
             </p>
           </div>
 

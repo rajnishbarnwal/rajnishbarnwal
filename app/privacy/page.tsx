@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "Privacy Policy — Data Handling & Protection",
   description:
     "Privacy policy for digitalrajnish.com. Clear terms on how contact form submissions and operational data are handled.",
+  alternates: {
+    canonical: "/privacy",
+  },
 };
 
 export default function PrivacyPage() {
@@ -81,7 +84,7 @@ export default function PrivacyPage() {
                   3. Booking & Scheduling Services
                 </h2>
                 <p>
-                  When booking a discovery call using the embedded calendar system (Cal.com), scheduling data is processed according to Cal.com's privacy and data protection standards. No unauthorized cookies or tracking pixels are placed on your browser.
+                  When booking a discovery call using the embedded calendar system (Cal.com), scheduling data is processed according to Cal.com&apos;s privacy and data protection standards. No unauthorized cookies or tracking pixels are placed on your browser.
                 </p>
               </section>
 

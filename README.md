@@ -42,19 +42,26 @@ Configure the environment variables:
 | Variable | Description | Default / Example |
 | :--- | :--- | :--- |
 | `RESEND_API_KEY` | Resend API key for sending contact form submissions | `re_...` (optional for local dev) |
+| `RESEND_FROM_EMAIL` | Verified sending address in Resend (e.g. `hello@digitalrajnish.com`) | `Rajnish Website <onboarding@resend.dev>` |
 | `CONTACT_EMAIL` | Destination mailbox where enquiries are delivered | `officialrajnishmail@gmail.com` |
 | `NEXT_PUBLIC_SITE_URL` | Canonical public URL of the website | `https://digitalrajnish.com` |
 | `NEXT_PUBLIC_CAL_USERNAME` | Cal.com handle for inline calendar scheduling embed | e.g. `rajnishbarnwal/30min` |
 
-*Note: The website is built to build and run smoothly even when API keys are empty. The contact form and Cal.com embed degrade gracefully without throwing errors.*
+*Note: In production, `RESEND_FROM_EMAIL` must be an address on a domain verified in Resend before going live.*
 
-### 4. Running Locally
+### 4. Adding a Headshot Photo
+To display a real headshot image:
+1. Add your photo to `public/` (for example `public/rajnish.jpg`).
+2. In `app/page.tsx`, pass the path to the component: `<PhotoPlaceholder src="/rajnish.jpg" />`.
+If no `src` is passed or the image is missing, a clean initials "RB" monogram is automatically rendered without making broken network requests.
+
+### 5. Running Locally
 ```bash
 npm run dev
 ```
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-### 5. Building for Production
+### 6. Building for Production
 ```bash
 npm run build
 npm run start

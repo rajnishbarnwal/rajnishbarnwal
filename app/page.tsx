@@ -1,4 +1,5 @@
 import React from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
@@ -11,7 +12,13 @@ import { CTABand } from "@/components/sections/CTABand";
 import { PersonJsonLd, ProfessionalServiceJsonLd } from "@/components/seo/JsonLd";
 import { getAllCaseStudies, getAllPosts } from "@/lib/content";
 import { siteConfig } from "@/lib/site";
-import { ArrowRight, ArrowUpRight, CheckCircle2, ShieldCheck, MapPin, Calendar, Clock, Globe } from "lucide-react";
+import { ArrowRight, CheckCircle2, MapPin, Calendar, Globe } from "lucide-react";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default async function HomePage() {
   const caseStudies = await getAllCaseStudies();
@@ -115,7 +122,7 @@ export default async function HomePage() {
               </h1>
 
               <p className="text-[17px] sm:text-[18px] text-[#57534E] leading-relaxed max-w-[62ch]">
-                I help mid-sized companies cut out manual work with automation, AI, and internal systems — built around how your team already works, so adoption isn't an afterthought.
+                I help mid-sized companies cut out manual work with automation, AI, and internal systems — built around how your team already works, so adoption isn&apos;t an afterthought.
               </p>
 
               <div className="pt-3 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
@@ -173,7 +180,7 @@ export default async function HomePage() {
               The data exists, nobody can see it.
             </h3>
             <p className="text-[15px] text-[#57534E] leading-relaxed">
-              Numbers live in five different Excel files and one person's inbox. By the time a report reaches leadership, it's a week old and already disputed.
+              Numbers live in five different Excel files and one person&apos;s inbox. By the time a report reaches leadership, it&apos;s a week old and already disputed.
             </p>
           </div>
 
@@ -186,7 +193,7 @@ export default async function HomePage() {
               Your team is the integration layer.
             </h3>
             <p className="text-[15px] text-[#57534E] leading-relaxed">
-              People copy data between systems by hand, chase approvals on WhatsApp, and re-key the same information three times. That's not a workflow — that's a salary spent on data entry.
+              People copy data between systems by hand, chase approvals on WhatsApp, and re-key the same information three times. That&apos;s not a workflow — that&apos;s a salary spent on data entry.
             </p>
           </div>
 
@@ -199,7 +206,7 @@ export default async function HomePage() {
               You bought the software. Nobody uses it.
             </h3>
             <p className="text-[15px] text-[#57534E] leading-relaxed">
-              Most transformation projects don't fail technically. They fail because nobody asked the people doing the work what would actually help.
+              Most transformation projects don&apos;t fail technically. They fail because nobody asked the people doing the work what would actually help.
             </p>
           </div>
         </div>
@@ -235,13 +242,13 @@ export default async function HomePage() {
           {/* Left Column: 4 short paragraphs (7 cols) */}
           <div className="lg:col-span-7 space-y-6 text-[17px] text-[#57534E] leading-relaxed">
             <p>
-              I spent nine years in marketing and growth before moving into IT — including four years running my own company. I've been the person who needed the report, not just the person building it.
+              I spent nine years in marketing and growth before moving into IT — including four years running my own company. I&apos;ve been the person who needed the report, not just the person building it.
             </p>
             <p>
-              Today I lead IT and digitalisation at an EPC company, where I've automated internal workflows with n8n, built MIS dashboards for leadership, run ERP integrations and vendor evaluations, and I'm currently building an in-house HRMS to replace paid commercial software.
+              Today I lead IT and digitalisation at an EPC company, where I&apos;ve automated internal workflows with n8n, built MIS dashboards for leadership, run ERP integrations and vendor evaluations, and I&apos;m currently building an in-house HRMS to replace paid commercial software.
             </p>
             <p>
-              That means I've done this work inside a real operating business, with real budget constraints and real people who didn't ask for a new system. Not as a slide deck.
+              That means I&apos;ve done this work inside a real operating business, with real budget constraints and real people who didn&apos;t ask for a new system. Not as a slide deck.
             </p>
             <p>
               I take on a small number of outside engagements at a time, so the ones I take get proper attention.

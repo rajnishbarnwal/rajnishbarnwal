@@ -62,9 +62,6 @@ export const metadata: Metadata = {
     title: `${siteConfig.name} — Digital Transformation Consultant`,
     description: siteConfig.description,
   },
-  alternates: {
-    canonical: siteConfig.url,
-  },
 };
 
 export default function RootLayout({
