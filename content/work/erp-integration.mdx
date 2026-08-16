@@ -1,0 +1,41 @@
+---
+title: "ERP evaluation and integration"
+client: "Shubham EPC"
+role: "Manager – IT & Digitalisation"
+period: "2025 – 2026"
+summary: "Vendor evaluation criteria, integration architecture, and the change-management side of rolling out ERP across operating teams."
+tags: ["ERP Integration", "Vendor Evaluation", "Change Management", "APIs"]
+order: 4
+---
+
+## Context
+
+Mid-sized EPC businesses often reach a stage where running finance, procurement, inventory, and billing across disconnected software tools leads to severe operational friction. Shubham EPC needed to evaluate and implement ERP solutions to unify core enterprise functions while ensuring day-to-day project operations continued without disruption.
+
+## The Problem
+
+Most ERP implementations at mid-sized companies fail not because the software is deficient, but because:
+- **Vendor Over-Promising:** Vendors sell pre-packaged modules that require massive, expensive customization to match how construction procurement actually works in India.
+- **Change Resistance:** Field personnel refuse to use clunky desktop interfaces, reverting to WhatsApp and paper slips.
+- **Integration Breakdown:** The new ERP fails to communicate with legacy estimating software, banking channels, and field data logs.
+
+## What I Did
+
+I represented internal operations and business interests throughout the vendor selection and implementation lifecycle:
+
+1. **Pragmatic Vendor Evaluation:** Formulated a rigorous scoring matrix focusing on real Indian contracting scenarios: subcontracting workflows, GST compliance, milestone-based billing, and mobile accessibility for field engineers.
+2. **API & Middleware Integration:** Built integration bridges between the core ERP system and external operational tools (including n8n workflows and custom mobile forms) to avoid double data entry.
+3. **Change Management & Floor Adoption:** Conducted hands-on training sessions directly with storekeepers, site engineers, and billing accountants. We streamlined user permissions so staff only saw fields relevant to their daily tasks.
+4. **Data Cleansing & Migration:** Governed the extraction, deduplication, and structured migration of legacy vendor registries, customer masters, and historical project cost codes.
+
+## Outcome
+
+- Successfully avoided costly customizations by identifying and negotiating out `{{METRIC: number of redundant vendor modules avoided}}` before contract signing.
+- Seamless data flow: Purchase orders created in ERP automatically sync status updates with field intake registries.
+- High user adoption rate achieved across `{{METRIC: number of operational sites}}` active project locations.
+
+## Stack & Tools
+
+- **Enterprise Systems:** Tier-1/Tier-2 Construction ERP
+- **Middleware & APIs:** RESTful APIs, Webhooks, n8n Automation
+- **Data Migration & ETL:** Python, SQL, PostgreSQL

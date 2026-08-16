@@ -1,0 +1,64 @@
+---
+title: "n8n, Zapier, or Make: what I actually use and why"
+description: "An honest comparison of automation tools based on real deployments in mid-sized Indian companies. Cost at scale, self-hosting realities, and when Zapier is still the right call."
+date: "2026-02-18"
+tags: ["n8n", "Zapier", "Make", "Tool Selection", "Cost"]
+readingTime: "6 min read"
+draft: false
+---
+
+When companies decide to connect their software tools, the conversation quickly turns to integration platforms. The three names that dominate the market are **Zapier**, **Make (formerly Integromat)**, and **n8n**.
+
+Most online reviews compare them by listing technical features in abstract tables. But when you are running operations for a ₹50Cr–₹500Cr business with real budget constraints and strict data privacy requirements, theoretical feature lists do not help.
+
+Here is an honest breakdown based on real-world implementations.
+
+## Zapier: Great for Non-Technical Fast Prototypes, Painful at Volume
+
+Zapier is the most established player in the market. It has the cleanest user interface and connects with virtually every niche SaaS application on the planet.
+
+### Where Zapier shines
+- **Speed to first test:** If a marketing team wants to send Facebook leads into Google Sheets, Zapier takes five minutes to set up without writing any code.
+- **App catalog:** If you use obscure cloud software with no open documentation, Zapier almost certainly has a pre-built connector.
+
+### The real-world problem
+- **Cost scaling:** Zapier charges per task. In a business where automated polling triggers run every few minutes or where webhooks process hundreds of daily transactions, task counts escalate rapidly. A mid-sized business can easily find itself facing steep monthly software bills for basic synchronization.
+- **Complex branch logic:** Multi-step branching, error handling, and looping over array data get cumbersome quickly in Zapier's vertical builder.
+
+## Make: Powerful Visual Canvas with Usage Limits
+
+Make offers a visual node-based builder that gives you far more granular control over data structures and conditions than Zapier.
+
+### Where Make shines
+- **Visual logic:** Building complex routing, error fallbacks, and multi-branch trees is intuitive on Make's visual canvas.
+- **Cost efficiency compared to Zapier:** Make operates on operations rather than rigid task units, making it significantly more affordable than Zapier for intermediate workloads.
+
+### The limitations
+- **Cloud dependency & data sovereignty:** All your payload data—customer contact lists, financial invoice totals, internal messages—flows through external shared cloud infrastructure.
+- **Complex execution limits:** High-frequency data transfers can exhaust plan quotas, causing critical operations to pause until someone upgrades the tier.
+
+## n8n: The Pragmatic Choice for Operating Businesses
+
+For internal operations, ERP integrations, and core business automations, **n8n** is my default choice.
+
+### Why I use n8n
+1. **Self-Hosting and Data Ownership:** n8n can be deployed on your own private cloud or virtual server. For companies in India handling sensitive client commercial terms, bank transaction webhooks, or HR employee data, having data remain strictly within your own infrastructure is critical.
+2. **Fixed, Predictable Cost:** When self-hosted, you pay for the modest server compute rather than paying per task execution. Whether your workflows process 500 tasks a day or 500,000 tasks a day, your software bill does not increase.
+3. **Native Code Flexibility:** If an off-the-shelf node does not support a specific data transformation, you can drop a native JavaScript or Python code node directly into the flow without configuring external web services.
+4. **Git Version Control & Environment Promotion:** Workflows can be exported, versioned in source repositories, and tested in staging environments before rolling out to live production operations.
+
+### Where n8n is NOT the answer
+- If you have no one internally or externally to maintain a secure Linux server or manage software updates, self-hosting requires operational ownership. (n8n also offers cloud hosting, but self-hosting is where the true leverage lies).
+- If your requirement is a one-off connection between two third-party consumer marketing apps that non-technical staff need to manage independently, Zapier is simpler.
+
+## Practical Decision Framework
+
+| Requirement | Best Tool | Why |
+| :--- | :--- | :--- |
+| Simple marketing leads & quick SaaS links | **Zapier** | Fastest setup, broad third-party support |
+| Moderate complexity with visual routing | **Make** | Better branching than Zapier, reasonable pricing |
+| Core business operations, ERP sync & high volume | **n8n** | Full data control, fixed server cost, code flexibility |
+
+## Summary
+
+Do not pick an integration tool based on hype. If you are validating an idea with 50 records a month, use whatever gets the job done by tomorrow morning. But if you are building the operational backbone that connects your ERP, site records, and accounting pipeline, choose a platform that will not penalize your business as transaction volumes grow.

@@ -1,0 +1,46 @@
+---
+title: "Cutting manual coordination out of daily operations"
+client: "Shubham EPC"
+role: "Manager – IT & Digitalisation"
+period: "2026"
+summary: "Repetitive cross-team handoffs and reporting automated with n8n; approvals, notifications, and data sync that previously ran on email and WhatsApp follow-ups."
+tags: ["n8n", "Workflow Automation", "Operations", "WhatsApp Sync"]
+order: 1
+---
+
+## Context
+
+In an engineering, procurement, and construction (EPC) business, operational speed depends directly on how fast approvals, purchase requests, site progress updates, and vendor receipts move between site teams and the head office. At Shubham EPC, key handoffs were running through scattered email threads, Excel tracking logs, and ad-hoc WhatsApp messages.
+
+When updates live in messaging apps, tasks get dropped, follow-ups take hours of manual calling, and leadership only finds out about a project delay days after it happens.
+
+## The Problem
+
+The company did not need another complex SaaS tool that nobody would open. The core issues were concrete:
+
+- **Manual data bridging:** Engineers on site sent photos and item counts over WhatsApp; administrative staff in the office manually typed those numbers into shared spreadsheets.
+- **Approval lag:** Purchase approvals sat in executive inboxes until someone physically called or followed up multiple times.
+- **Fragmented audit trails:** When questions arose regarding when an item was approved or dispatched, finding the original confirmation required searching months of chat histories.
+
+## What I Did
+
+Rather than forcing the field teams to adopt a heavy desktop system, I designed automated workflows using **n8n** that met people where they already operated:
+
+1. **Standardised Intake Workflows:** Replaced free-form chat messages with lightweight mobile forms and webhook-driven intake that automatically validate inputs and store records centrally.
+2. **Multi-Stage Approval Automation:** Configured n8n flows that route approval requests directly to the relevant manager with one-click decision actions. If an approval is pending past a threshold, the system triggers automated escalations.
+3. **Cross-System Synchronization:** Connected the approval pipeline directly to inventory registers and accounting systems, updating records without manual re-keying.
+4. **Automated Status Broadcasting:** Created scheduled notification triggers that alert project managers and site heads about order statuses and pending milestones.
+
+## Outcome
+
+- Eliminated `{{METRIC: estimated hours per week saved across admin and site teams}}` of manual data entry and status chasing.
+- Cut approval turnaround time from `{{METRIC: previous average approval time in days}}` down to `{{METRIC: new average approval time in hours}}`.
+- Complete auditability: Every approval, timestamp, and status update is logged automatically in the core database.
+- 100% staff adoption because field engineers did not need to install complicated new enterprise software.
+
+## Stack & Tools
+
+- **Automation Engine:** n8n (self-hosted)
+- **Database & Storage:** PostgreSQL / Cloud Storage
+- **Notifications & Communication:** Webhooks, Transactional Email, WhatsApp Business API
+- **Form Triggers:** Responsive web intake forms

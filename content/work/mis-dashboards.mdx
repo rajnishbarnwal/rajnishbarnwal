@@ -1,0 +1,42 @@
+---
+title: "Giving leadership one number they trust"
+client: "Shubham EPC"
+role: "Manager – IT & Digitalisation"
+period: "2026"
+summary: "Consolidating fragmented reporting into a live MIS dashboard; the hard part was agreeing on metric definitions, not building charts."
+tags: ["MIS Dashboards", "Power BI", "Data Consolidation", "Executive Reporting"]
+order: 3
+---
+
+## Context
+
+For executive leadership at Shubham EPC, getting an accurate picture of ongoing projects, cash flow requirements, billing status, and material consumption required waiting for weekly or monthly review meetings. 
+
+By the time leadership received department spreadsheets, the numbers were already days old, compiled under differing assumptions, and frequently challenged during the meeting itself.
+
+## The Problem
+
+- **Disputed Definitions:** Accounts calculated billing based on issued invoices; project managers calculated progress based on site execution; procurement calculated costs based on purchase orders. No two departments agreed on actual project margins.
+- **Manual Spreadsheet Compilations:** Senior department managers spent up to `{{METRIC: manager hours spent per week compiling reports}}` every Monday consolidating multiple Excel files.
+- **Lagging Indicator Management:** Leadership learned about budget overruns and delayed milestones only after invoices piled up, rather than having early warning alerts.
+
+## What I Did
+
+The technical effort of making charts is secondary; the real work was standardising business logic and automating the pipeline:
+
+1. **Metric Definition Alignment:** Facilitated alignment sessions between project directors, accounts, and procurement to define single, authoritative formulas for billing, work-in-progress (WIP), and procurement burn rates.
+2. **Automated ETL Pipeline:** Built automated data extraction flows that pull records directly from operational databases and registers every night, transforming raw numbers into structured data models.
+3. **Executive MIS Dashboard:** Developed clean, role-tailored dashboards providing directors with headline project KPIs, drill-down capabilities by site, and automated variance flags.
+4. **Automated Exception Triggers:** Configured alert notifications sent to leadership when project expenditure exceeds budget thresholds by more than `{{METRIC: percentage threshold}}`%.
+
+## Outcome
+
+- Eliminated `{{METRIC: total hours saved in reporting prep}}` per month previously spent manually compiling Excel reports.
+- Real-time decision making: Executives now review live project data with zero lag instead of waiting for monthly wrap-up presentations.
+- Ended metric disputes in executive reviews because all departments operate from a single, auditable source of truth.
+
+## Stack & Tools
+
+- **BI & Visualisation:** Power BI / Google Looker Studio
+- **Data Modeling & Storage:** PostgreSQL / Structured Data Warehousing
+- **Data Ingestion:** Automated n8n ETL pipelines & scheduled SQL views

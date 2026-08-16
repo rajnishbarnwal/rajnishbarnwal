@@ -1,0 +1,43 @@
+---
+title: "Building an in-house HRMS to replace paid software"
+client: "Shubham EPC"
+role: "Manager – IT & Digitalisation"
+period: "In Progress (2026)"
+summary: "Why build instead of buy, scope decisions, rollout approach, and cost avoidance on per-seat commercial HR software licensing."
+tags: ["Internal Software", "HRMS", "Next.js", "PostgreSQL", "Build vs Buy"]
+order: 2
+---
+
+## Context
+
+As Shubham EPC expanded its permanent staff and distributed site workforce, managing attendance, leave approvals, employee documentation, and field allowances through generic third-party SaaS software became increasingly problematic and expensive.
+
+Commercial HRMS platforms typically charge hefty per-user per-month licensing fees. Worse, their off-the-shelf workflows failed to match the realities of construction site operations, where employees frequently move between remote locations and work under non-standard shift patterns.
+
+## The Problem
+
+- **Recurring Software Costs:** Paying annual per-seat licenses for `{{METRIC: total workforce count}}` employees, even though field workers only needed basic attendance and leave logging.
+- **Workflow Mismatch:** Off-the-shelf software forced the operations team into rigid approval hierarchies that did not reflect actual project reporting structures.
+- **Data Silos:** Extracting attendance and payroll records to match internal project costing sheets required manual Excel exports every billing cycle.
+
+## What I Did
+
+I initiated and led the development of **Shubham ONE**, a tailored internal HRMS designed specifically for the company's operating workflows:
+
+1. **Strategic Scope Definition:** Stripped out enterprise bloat. Focused strictly on core high-friction modules: attendance tracking with geofencing, leave workflows, employee lifecycle document repository, and project allocation.
+2. **Modern Architecture:** Built a fast, responsive web application using Next.js, TypeScript, and PostgreSQL that works seamlessly on mobile devices used by field staff.
+3. **Role-Based Permissions & Site Hierarchies:** Designed access control that allows site managers to approve site-specific attendance while maintaining central governance for head office HR and accounts.
+4. **Phased Rollout Strategy:** Rolled out the system in stages—first to head office departments, then site by site, gathering immediate feedback to fix usability friction before expanding.
+
+## Outcome
+
+- Projected annual recurring cost avoidance of `{{METRIC: estimated annual recurring SaaS fee savings in INR}}` in external licensing fees.
+- Reduced payroll reconciliation time at month-end from `{{METRIC: previous days required}}` to `{{METRIC: new turnaround time in hours}}`.
+- Complete internal control over data, security policies, and feature roadmaps without vendor lock-in.
+
+## Stack & Tools
+
+- **Frontend & Fullstack:** Next.js (App Router), TypeScript, Tailwind CSS
+- **Backend & Database:** Node.js, PostgreSQL
+- **Authentication & Security:** Secure JWT & Role-Based Access Control (RBAC)
+- **Deployment:** Containerised self-hosted infrastructure
