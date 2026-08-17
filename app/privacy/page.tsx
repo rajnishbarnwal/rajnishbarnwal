@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 };
 
 export default function PrivacyPage() {
-  const lastUpdated = "March 2026";
+  const lastUpdated = "August 2026";
 
   return (
     <>
@@ -84,7 +84,7 @@ export default function PrivacyPage() {
                   3. Booking & Scheduling Services
                 </h2>
                 <p>
-                  When booking a discovery call using the embedded calendar system (Cal.com), scheduling data is processed according to Cal.com&apos;s privacy and data protection standards. No unauthorized cookies or tracking pixels are placed on your browser.
+                  Discovery calls are arranged directly over email. If the optional embedded scheduling tool (Cal.com) is enabled and used, your scheduling details are processed under Cal.com&apos;s privacy and data protection terms. No unauthorized cookies or tracking pixels are placed on your browser.
                 </p>
               </section>
 
