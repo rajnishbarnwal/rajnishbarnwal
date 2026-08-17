@@ -14,7 +14,7 @@ export function WorkCard({ slug, frontmatter }: WorkCardProps) {
   const { title, client, role, period, summary, tags } = frontmatter;
 
   return (
-    <Card className="group relative flex flex-col justify-between hover:border-[#1D4ED8] hover:shadow-xs transition-all duration-180 bg-white">
+    <Card className="group relative flex flex-col justify-between hover:border-[#1D4ED8] hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 rounded-[10px] bg-white border-[#E7E5E4]">
       <CardHeader>
         <div className="flex flex-wrap items-center justify-between gap-2 text-[13px] text-[#A8A29E] mb-2">
           <span className="font-medium text-[#57534E]">{client}</span>

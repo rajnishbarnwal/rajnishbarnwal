@@ -20,7 +20,7 @@ export function PostCard({ slug, frontmatter }: PostCardProps) {
   });
 
   return (
-    <article className="group relative flex flex-col justify-between rounded-[8px] border border-[#E7E5E4] bg-white p-6 sm:p-8 hover:border-[#1D4ED8] hover:shadow-xs transition-all duration-180">
+    <article className="group relative flex flex-col justify-between rounded-[10px] border border-[#E7E5E4] bg-white p-6 sm:p-8 hover:border-[#1D4ED8] hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
       <div>
         <div className="flex items-center justify-between gap-2 text-[13px] text-[#A8A29E] mb-3">
           <time dateTime={date}>{formattedDate}</time>

@@ -108,37 +108,64 @@ export default async function HomePage() {
       <ProfessionalServiceJsonLd />
 
       {/* 1. HERO SECTION */}
-      <section className="pt-16 pb-20 lg:pt-24 lg:pb-32 bg-white">
+      <section className="relative pt-16 pb-20 lg:pt-24 lg:pb-32 bg-white overflow-hidden">
+        {/* Subtle Ambient Background Gradient Spotlights */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] overflow-hidden -z-10 pointer-events-none">
+          <div className="absolute -top-32 left-1/4 w-[500px] h-[500px] bg-gradient-to-br from-blue-100/50 via-indigo-50/30 to-transparent rounded-full blur-3xl opacity-70" />
+          <div className="absolute top-20 right-1/4 w-[420px] h-[420px] bg-gradient-to-bl from-sky-100/40 via-blue-50/20 to-transparent rounded-full blur-3xl opacity-60" />
+        </div>
+
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             {/* Left Col (7 cols) */}
             <div className="lg:col-span-7 space-y-6">
-              <p className="text-[12px] font-semibold uppercase tracking-[0.09em] text-[#1D4ED8] bg-[#EFF6FF] px-3 py-1 rounded-full inline-block border border-[#DBEAFE]">
-                Digital Transformation Consultant · Pune, India
-              </p>
+              {/* Executive Status Badge */}
+              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-[#BFDBFE] bg-white/90 backdrop-blur-sm shadow-xs text-[12px] font-semibold text-[#1D4ED8] tracking-wide">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <span>Digital Transformation Consultant · Pune, India</span>
+              </div>
 
-              <h1 className="text-[34px] sm:text-[46px] lg:text-[54px] font-semibold text-[#0C0A09] tracking-[-0.03em] leading-[1.08]">
-                Digital transformation that actually gets used.
+              {/* Bold Executive Headline */}
+              <h1 className="text-[36px] sm:text-[48px] lg:text-[56px] font-bold text-[#0C0A09] tracking-[-0.035em] leading-[1.06]">
+                Digital transformation{" "}
+                <span className="text-[#1D4ED8]">that actually gets used.</span>
               </h1>
 
-              <p className="text-[17px] sm:text-[18px] text-[#57534E] leading-relaxed max-w-[62ch]">
+              {/* High-Readability Subtitle */}
+              <p className="text-[17px] sm:text-[19px] text-[#57534E] leading-[1.6] max-w-[62ch]">
                 I help mid-sized companies cut out manual work with automation, AI, and internal systems — built around how your team already works, so adoption isn&apos;t an afterthought.
               </p>
 
-              <div className="pt-3 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-                <Button asChild size="lg">
+              {/* CTA Group */}
+              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                <Button asChild size="lg" className="shadow-md shadow-blue-900/10 hover:shadow-lg transition-all">
                   <Link href="/contact">
-                    Book a 30-min call
+                    Book a 30-min discovery call
                     <ArrowRight className="ml-1.5 h-4 w-4" />
                   </Link>
                 </Button>
-                <Button asChild variant="secondary" size="lg">
+                <Button asChild variant="secondary" size="lg" className="border border-[#E7E5E4] hover:bg-[#FAFAF9]">
                   <Link href="/services">See how I work</Link>
                 </Button>
               </div>
+
+              {/* Trust Markers */}
+              <div className="pt-3 flex flex-wrap items-center gap-x-6 gap-y-2 text-[13px] text-[#57534E] font-medium">
+                <span className="flex items-center gap-1.5">
+                  <CheckCircle2 className="h-4 w-4 text-[#1D4ED8] shrink-0" />
+                  Direct practitioner — no agency markup
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <CheckCircle2 className="h-4 w-4 text-[#1D4ED8] shrink-0" />
+                  Working internal systems, zero slide decks
+                </span>
+              </div>
             </div>
 
-            {/* Right Col (5 cols): Photo Placeholder */}
+            {/* Right Col (5 cols): Profile & Live Capabilities Showcase */}
             <div className="lg:col-span-5 flex justify-center lg:justify-end">
               <PhotoPlaceholder />
             </div>
@@ -147,7 +174,7 @@ export default async function HomePage() {
       </section>
 
       {/* 2. CREDIBILITY STRIP */}
-      <section className="border-y border-[#E7E5E4] bg-[#FAFAF9] py-5 text-[#57534E]">
+      <section className="border-y border-[#E7E5E4] bg-[#FAFAF9]/90 backdrop-blur-sm py-4 text-[#57534E]">
         <Container>
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-[13px] sm:text-[14px] text-center font-medium">
             {siteConfig.credentials.map((cred, idx) => (
@@ -170,10 +197,10 @@ export default async function HomePage() {
         title="It's rarely a software problem."
         description="Most mid-sized companies have plenty of tools. The breakdown happens in the spaces between them and on the shop floor."
       >
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {/* Problem 01 */}
-          <div className="border border-[#E7E5E4] rounded-[8px] p-6 sm:p-8 bg-white space-y-4">
-            <span className="text-[28px] font-semibold text-[#1D4ED8] font-mono">
+          <div className="border border-[#E7E5E4] rounded-[12px] p-6 sm:p-8 bg-white space-y-4 hover:border-[#1D4ED8] hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+            <span className="text-[28px] font-bold text-[#1D4ED8] font-mono">
               01
             </span>
             <h3 className="text-[19px] font-semibold text-[#0C0A09]">
@@ -185,8 +212,8 @@ export default async function HomePage() {
           </div>
 
           {/* Problem 02 */}
-          <div className="border border-[#E7E5E4] rounded-[8px] p-6 sm:p-8 bg-white space-y-4">
-            <span className="text-[28px] font-semibold text-[#1D4ED8] font-mono">
+          <div className="border border-[#E7E5E4] rounded-[12px] p-6 sm:p-8 bg-white space-y-4 hover:border-[#1D4ED8] hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+            <span className="text-[28px] font-bold text-[#1D4ED8] font-mono">
               02
             </span>
             <h3 className="text-[19px] font-semibold text-[#0C0A09]">
@@ -198,8 +225,8 @@ export default async function HomePage() {
           </div>
 
           {/* Problem 03 */}
-          <div className="border border-[#E7E5E4] rounded-[8px] p-6 sm:p-8 bg-white space-y-4">
-            <span className="text-[28px] font-semibold text-[#1D4ED8] font-mono">
+          <div className="border border-[#E7E5E4] rounded-[12px] p-6 sm:p-8 bg-white space-y-4 hover:border-[#1D4ED8] hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+            <span className="text-[28px] font-bold text-[#1D4ED8] font-mono">
               03
             </span>
             <h3 className="text-[19px] font-semibold text-[#0C0A09]">

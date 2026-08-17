@@ -32,8 +32,8 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full bg-white/95 backdrop-blur-xs transition-all duration-200",
-        isScrolled ? "border-b border-[#E7E5E4] py-3.5 shadow-xs" : "py-5"
+        "sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md transition-all duration-200",
+        isScrolled ? "border-b border-[#E7E5E4]/80 py-3.5 shadow-xs" : "py-4.5"
       )}
     >
       <Container>
@@ -41,13 +41,16 @@ export function Header() {
           {/* Wordmark */}
           <Link
             href="/"
-            className="text-[19px] font-semibold tracking-tight text-[#0C0A09] hover:text-[#1D4ED8] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1D4ED8] rounded-sm"
+            className="flex items-center gap-2 text-[19px] font-bold tracking-tight text-[#0C0A09] hover:text-[#1D4ED8] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1D4ED8] rounded-sm"
           >
-            {siteConfig.name}
+            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#1D4ED8] text-white text-xs font-black tracking-tighter shadow-xs">
+              RB
+            </span>
+            <span>{siteConfig.name}</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8" aria-label="Main Navigation">
+          <nav className="hidden md:flex items-center gap-1 bg-[#FAFAF9] p-1 rounded-full border border-[#E7E5E4]" aria-label="Main Navigation">
             {siteConfig.nav.map((item) => {
               const isActive =
                 item.href === "/"
@@ -58,10 +61,10 @@ export function Header() {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "text-[15px] font-medium transition-colors hover:text-[#1D4ED8]",
+                    "text-[14px] px-4 py-1.5 rounded-full transition-all duration-150",
                     isActive
-                      ? "text-[#1D4ED8] font-semibold"
-                      : "text-[#57534E]"
+                      ? "bg-white text-[#1D4ED8] font-semibold shadow-xs border border-[#E7E5E4]"
+                      : "text-[#57534E] hover:text-[#0C0A09] font-medium"
                   )}
                 >
                   {item.title}

@@ -18,7 +18,7 @@ export function ServiceCard({
   href,
 }: ServiceCardProps) {
   return (
-    <Card className="group relative flex flex-col justify-between hover:border-[#1D4ED8] hover:shadow-xs transition-all duration-180 bg-white">
+    <Card className="group relative flex flex-col justify-between hover:border-[#1D4ED8] hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 rounded-[10px] bg-white border-[#E7E5E4]">
       <CardHeader>
         <CardTitle className="text-[20px] sm:text-[22px] group-hover:text-[#1D4ED8] transition-colors">
           {title}
