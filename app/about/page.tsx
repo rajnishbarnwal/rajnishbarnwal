@@ -68,10 +68,10 @@ export default function AboutPage() {
                 Following Opinta, I led growth and marketing operations at <strong>eduGENZ</strong> (2022–2024) and <strong>Kamalraj Group</strong> (2024–2025). In both roles, my responsibility was not just running campaigns, but building the underlying CRM funnels, customer tracking automations, and reporting pipelines that made operational scaling possible.
               </p>
               <p>
-                In 2025, I joined <strong>Shubham EPC</strong>, initially as Brand Manager, and in 2026 transitioned to <strong>Manager – IT & Digitalisation</strong>. Today, I lead enterprise digital transformation across our business: deploying n8n workflow automations that eliminate manual WhatsApp follow-ups, constructing live MIS dashboards for our directors, managing ERP vendor integrations, and developing <em>Shubham ONE</em>—our custom internal HRMS designed to replace paid commercial software.
+                At <strong>Shubham EPC</strong>, I spearheaded enterprise digital transformation and internal systems architecture: deploying n8n workflow automations that eliminated manual coordination bottlenecks, constructing live MIS dashboards for executive leadership, managing ERP vendor integrations, and developing <em>Shubham ONE</em>—a custom internal HRMS designed to replace paid commercial software.
               </p>
               <p className="pt-2 font-medium text-[#0C0A09]">
-                The marketing and entrepreneurial years were not a detour. They are the exact reason I approach digitalisation from business outcomes, employee adoption, and cost constraints—rather than pushing software for its own sake.
+                The entrepreneurial and growth years were not a detour. They are the exact reason I approach digitalisation from tangible business ROI, employee adoption, and cost constraints—rather than pushing tech for its own sake.
               </p>
             </div>
           </div>

@@ -1,12 +1,12 @@
 export const siteConfig = {
   name: "Rajnish Barnwal",
   title: "Rajnish Barnwal — Digital Transformation Consultant",
-  role: "Manager, IT & Digitalisation",
-  company: "Shubham EPC",
-  location: "Pune, Maharashtra, India",
-  tagline: "I help mid-sized companies replace manual work with systems their teams actually use.",
+  role: "Systems & Automation Consultant",
+  company: "Independent Advisory & Consulting",
+  location: "Pune, India (Serving Global & Indian Clients)",
+  tagline: "I build internal systems and workflow automations that save businesses 100s of hours.",
   description:
-    "Digital transformation consultant in Pune, India. Helping mid-sized manufacturing, EPC, construction, and SMB companies eliminate manual bottlenecks with workflow automation (n8n), practical AI, MIS dashboards, and systems integration.",
+    "Business systems and automation consultant. Helping fast-growing companies and mid-market enterprises eliminate operational chaos with custom workflow automation (n8n), executive MIS dashboards, AI workflows, and bespoke internal tools.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://digitalrajnish.com",
   email: process.env.CONTACT_EMAIL || "officialrajnishmail@gmail.com",
   links: {
@@ -22,16 +22,16 @@ export const siteConfig = {
     { title: "Contact", href: "/contact" },
   ],
   credentials: [
-    "Manager – IT & Digitalisation, Shubham EPC",
-    "9 years in marketing & growth",
-    "Former founder, Opinta Solutions",
+    "Enterprise Systems & Automation Consultant",
+    "Proven Enterprise Track Record (Shubham EPC)",
+    "Former Founder, Opinta Solutions",
     "B.Tech — MIT Academy of Engineering, Pune",
   ],
   statsFacts: [
-    "Based in Pune, works with clients across India",
-    "Available for project-based and advisory work",
-    "Typical first engagement: 2–6 weeks",
-    "Languages: English, Hindi, Marathi",
+    "Available worldwide for remote & advisory consulting",
+    "Fixed-scope milestone sprints with 100% IP handover",
+    "Typical first project: 2–4 weeks",
+    "Timezone compatible with US, UK, Middle East & India",
   ],
   tools: [
     "n8n",

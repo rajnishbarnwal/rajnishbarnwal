@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { Workflow, BarChart3, Layers, Database, ShieldCheck } from "lucide-react";
+import { Workflow, BarChart3, Layers, Database, Globe2 } from "lucide-react";
 
 interface PhotoPlaceholderProps {
   className?: string;
@@ -14,7 +14,7 @@ interface PhotoPlaceholderProps {
 export function PhotoPlaceholder({
   className,
   src,
-  alt = "Rajnish Barnwal — Digital Transformation Consultant",
+  alt = "Rajnish Barnwal — Systems & Automation Consultant",
 }: PhotoPlaceholderProps) {
   const [hasError, setHasError] = useState(false);
 
@@ -42,10 +42,10 @@ export function PhotoPlaceholder({
             {/* Top status indicator badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EFF6FF] border border-[#BFDBFE] text-[11px] font-semibold text-[#1D4ED8] mb-5 tracking-wide">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#1D4ED8]"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
-              Systems & Digitalisation
+              Independent Advisory · Global
             </div>
 
             {/* Monogram Avatar with Layered Depth */}
@@ -53,20 +53,20 @@ export function PhotoPlaceholder({
               <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br from-[#1D4ED8] to-[#1E40AF] text-2xl font-bold tracking-tight text-white shadow-md shadow-blue-900/20 ring-4 ring-blue-50">
                 RB
               </div>
-              <div className="absolute -bottom-1.5 -right-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-white shadow-xs ring-2 ring-white">
-                <ShieldCheck className="h-3.5 w-3.5" />
+              <div className="absolute -bottom-1.5 -right-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-blue-600 text-white shadow-xs ring-2 ring-white">
+                <Globe2 className="h-3.5 w-3.5" />
               </div>
             </div>
 
-            {/* Identity & Current Leadership Role */}
+            {/* Identity & Global Role */}
             <h3 className="text-[19px] font-bold text-[#0C0A09] tracking-tight">
               Rajnish Barnwal
             </h3>
             <p className="text-[13.5px] font-semibold text-[#1D4ED8] mt-0.5">
-              Manager – IT & Digitalisation
+              Systems & Automation Architect
             </p>
             <p className="text-[12.5px] text-[#78716C] mt-0.5">
-              Shubham EPC · Pune, India
+              Serving Clients Across US, UK, Middle East & India
             </p>
           </div>
         )}
@@ -74,7 +74,7 @@ export function PhotoPlaceholder({
         {/* Live Systems Capabilities Matrix */}
         <div className="mt-5 pt-5 border-t border-[#F5F5F4]">
           <p className="text-[11px] font-semibold uppercase tracking-wider text-[#A8A29E] mb-2.5 text-center">
-            Core Implementation Focus
+            Core Technical Capabilities
           </p>
           <div className="grid grid-cols-2 gap-2 text-[12px] font-medium text-[#292524]">
             <div className="flex items-center gap-1.5 rounded-[7px] border border-[#E7E5E4] bg-[#FAFAF9] px-2.5 py-1.5">
@@ -83,15 +83,15 @@ export function PhotoPlaceholder({
             </div>
             <div className="flex items-center gap-1.5 rounded-[7px] border border-[#E7E5E4] bg-[#FAFAF9] px-2.5 py-1.5">
               <BarChart3 className="h-3.5 w-3.5 text-[#1D4ED8] shrink-0" />
-              <span className="truncate">MIS Dashboards</span>
+              <span className="truncate">Executive BI</span>
             </div>
             <div className="flex items-center gap-1.5 rounded-[7px] border border-[#E7E5E4] bg-[#FAFAF9] px-2.5 py-1.5">
               <Layers className="h-3.5 w-3.5 text-[#1D4ED8] shrink-0" />
-              <span className="truncate">In-House HRMS</span>
+              <span className="truncate">Custom SaaS & Apps</span>
             </div>
             <div className="flex items-center gap-1.5 rounded-[7px] border border-[#E7E5E4] bg-[#FAFAF9] px-2.5 py-1.5">
               <Database className="h-3.5 w-3.5 text-[#1D4ED8] shrink-0" />
-              <span className="truncate">ERP Integrations</span>
+              <span className="truncate">ERP & API Sync</span>
             </div>
           </div>
         </div>
