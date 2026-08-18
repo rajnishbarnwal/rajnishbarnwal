@@ -3,8 +3,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
-import { Button } from "@/components/ui/button";
-import { PhotoPlaceholder } from "@/components/ui/PhotoPlaceholder";
 import { ServiceCard } from "@/components/cards/ServiceCard";
 import { WorkCard } from "@/components/cards/WorkCard";
 import { PostCard } from "@/components/cards/PostCard";
@@ -12,10 +10,10 @@ import { CTABand } from "@/components/sections/CTABand";
 import { PersonJsonLd, ProfessionalServiceJsonLd } from "@/components/seo/JsonLd";
 import { getAllCaseStudies, getAllPosts } from "@/lib/content";
 import { siteConfig } from "@/lib/site";
-import { ArrowRight, CheckCircle2, Globe, Zap, Shield, Clock, Workflow, BarChart3, Database, Layers } from "lucide-react";
+import { ArrowRight, Workflow, BarChart3, Layers, Database, Shield, Zap, Globe2, Clock, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Rajnish Barnwal — Systems & Automation Consultant",
+  title: "Rajnish Barnwal | AI, Systems & Automation for Founders",
   description:
     "Business systems and automation consultant. Helping fast-growing companies and mid-market enterprises eliminate operational chaos with custom workflow automation (n8n), executive MIS dashboards, AI workflows, and bespoke internal tools.",
   alternates: {
@@ -34,48 +32,48 @@ export default async function HomePage() {
     {
       id: "automation",
       title: "Workflow & Process Automation",
-      summary: "Connect your tools and eliminate manual busywork with reliable, self-hosted n8n pipelines.",
+      summary: "Connect your disjointed software tools and eliminate manual busywork with self-hosted n8n pipelines.",
       outcomes: [
-        "Automated multi-stage approval flows across email, Slack & WhatsApp",
-        "System-to-system data sync eliminating duplicate manual entry",
-        "Nightly scheduled reports and automated alert triggers",
-        "Self-hosted infrastructure with zero per-execution SaaS tax",
+        "Multi-stage approval flows across Email, WhatsApp & Slack",
+        "System-to-system data sync eliminating duplicate manual data entry",
+        "Nightly scheduled ETL pipelines and automated exception alerts",
+        "Zero per-execution cloud tax with robust self-hosted architecture",
       ],
       href: "/services#automation",
     },
     {
       id: "mis",
       title: "Executive MIS & Real-Time BI",
-      summary: "A single, auditable source of truth for leadership that updates automatically.",
+      summary: "A single, auditable source of truth for leadership that updates automatically in real time.",
       outcomes: [
-        "Unified executive dashboards replacing messy Monday spreadsheets",
-        "Automated data extraction directly from operational databases",
-        "Real-time visibility into project margins, billing, and burn rates",
-        "Exception-based alerts before budget overruns occur",
+        "Live executive dashboards replacing messy, disputed spreadsheets",
+        "Automated extraction directly from operational and financial databases",
+        "Instant visibility into project margins, billing status, and burn rates",
+        "Early warning exception alerts before budget overruns occur",
       ],
       href: "/services#mis",
     },
     {
       id: "apps",
       title: "Bespoke Internal SaaS & Tools",
-      summary: "Custom web applications built around your exact workflows, eliminating per-seat SaaS costs.",
+      summary: "Custom web applications built around your exact workflows, eliminating expensive per-seat SaaS costs.",
       outcomes: [
         "Tailored web apps built with Next.js, TypeScript & PostgreSQL",
-        "Mobile-optimized interfaces designed for floor and field teams",
-        "Role-based access control (RBAC) and data isolation",
-        "100% intellectual property and code ownership",
+        "Mobile-first responsive interfaces built for shop floor & field teams",
+        "Role-based access control (RBAC) and clean audit logging",
+        "100% intellectual property, source code, and data ownership",
       ],
       href: "/services#ai",
     },
     {
       id: "erp",
       title: "ERP & Systems Integration",
-      summary: "Bridging legacy systems, accounting databases, and modern APIs into unified operations.",
+      summary: "Bridging legacy systems, accounting software, and modern cloud APIs into unified operations.",
       outcomes: [
         "Unbiased vendor evaluation and pragmatic architecture roadmap",
         "Custom middleware and bi-directional REST API connectors",
-        "Field team change management for high frontline adoption",
-        "Clean data migration avoiding costly custom vendor add-ons",
+        "Frontline team change management for high adoption from day one",
+        "Clean data migration without getting trapped in proprietary vendor fees",
       ],
       href: "/services#erp",
     },
@@ -86,7 +84,7 @@ export default async function HomePage() {
       icon: Zap,
       title: "Direct Specialist Execution",
       description:
-        "You work directly with the architect and builder. No account managers, junior handoffs, or agency overhead.",
+        "You work directly with the architect and builder. No account managers, junior handoffs, or bloated agency overhead.",
     },
     {
       icon: Shield,
@@ -95,7 +93,7 @@ export default async function HomePage() {
         "Every project has clear milestones, predictable timelines, and transparent fixed deliverables.",
     },
     {
-      icon: Globe,
+      icon: Globe2,
       title: "Global Async & Timezone Agnostic",
       description:
         "Experienced working with clients in the US, UK, Middle East, and India with seamless asynchronous communication.",
@@ -113,13 +111,13 @@ export default async function HomePage() {
       number: "01",
       title: "15-Min Discovery",
       description:
-        "We pinpoint your single biggest operational bottleneck and evaluate feasibility immediately.",
+        "We pinpoint your single biggest operational bottleneck and evaluate technical feasibility immediately.",
     },
     {
       number: "02",
       title: "Fixed-Milestone Sprint",
       description:
-        "Rapid architecture, building, and team-testing in testable 2 to 4-week delivery sprints.",
+        "Rapid architecture, build, and team-testing in testable 2 to 4-week delivery sprints.",
     },
     {
       number: "03",
@@ -134,148 +132,149 @@ export default async function HomePage() {
       <PersonJsonLd />
       <ProfessionalServiceJsonLd />
 
-      {/* 1. HERO SECTION */}
-      <section className="relative pt-16 pb-20 lg:pt-24 lg:pb-32 bg-white overflow-hidden">
-        {/* Ambient Gradient Mesh Background */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[650px] overflow-hidden -z-10 pointer-events-none">
-          <div className="absolute -top-32 left-1/4 w-[540px] h-[540px] bg-gradient-to-br from-blue-100/60 via-indigo-50/40 to-transparent rounded-full blur-3xl opacity-70" />
-          <div className="absolute top-24 right-1/4 w-[460px] h-[460px] bg-gradient-to-bl from-sky-100/50 via-blue-50/25 to-transparent rounded-full blur-3xl opacity-60" />
-        </div>
-
+      {/* 1. HERO SECTION (Dark Cybernetic Executive) */}
+      <section className="relative pt-36 pb-20 lg:pt-44 lg:pb-32 mesh-bg overflow-hidden">
         <Container>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            {/* Left Col (7 cols) */}
-            <div className="lg:col-span-7 space-y-6">
-              {/* Executive Status Badge */}
-              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-[#BFDBFE] bg-white/90 backdrop-blur-sm shadow-xs text-[12.5px] font-semibold text-[#1D4ED8] tracking-wide">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                </span>
-                <span>Systems & Automation Consultant · Serving Clients Worldwide</span>
-              </div>
-
-              {/* High-Impact Headline */}
-              <h1 className="text-[36px] sm:text-[48px] lg:text-[56px] font-bold text-[#0C0A09] tracking-[-0.035em] leading-[1.08]">
-                I build internal systems and automations that{" "}
-                <span className="text-[#1D4ED8]">save 100s of hours.</span>
-              </h1>
-
-              {/* High-Readability Subtitle */}
-              <p className="text-[17px] sm:text-[19px] text-[#57534E] leading-[1.6] max-w-[62ch]">
-                Eliminate operational chaos with custom workflow automation (n8n), real-time executive BI dashboards, and bespoke internal tools for mid-market and high-growth companies.
-              </p>
-
-              {/* CTA Group */}
-              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-                <Button asChild size="lg" className="shadow-md shadow-blue-900/10 hover:shadow-lg transition-all h-12 text-base px-6">
-                  <Link href="/contact">
-                    Book a 30-min discovery call
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-                <Button asChild variant="secondary" size="lg" className="border border-[#E7E5E4] hover:bg-[#FAFAF9] h-12 text-base px-6">
-                  <Link href="/work">View Client Work</Link>
-                </Button>
-              </div>
-
-              {/* Trust Markers */}
-              <div className="pt-3 flex flex-wrap items-center gap-x-6 gap-y-2.5 text-[13px] text-[#57534E] font-medium">
-                <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="h-4 w-4 text-[#1D4ED8] shrink-0" />
-                  Direct practitioner — no agency overhead
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="h-4 w-4 text-[#1D4ED8] shrink-0" />
-                  Fixed-scope sprints with 100% IP handover
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="h-4 w-4 text-[#1D4ED8] shrink-0" />
-                  Compatible with US, UK, Middle East & India timezones
-                </span>
-              </div>
+          <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+            {/* Location & Status Badge */}
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.06] border border-white/10 mb-8 backdrop-blur-md">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#4edea3] animate-pulse"></span>
+              <span className="text-xs font-mono tracking-widest text-neutral-300 uppercase">
+                PUNE, INDIA & WORLDWIDE · GLOBAL CONSULTING
+              </span>
             </div>
 
-            {/* Right Col (5 cols): Global Consultant Terminal Card */}
-            <div className="lg:col-span-5 flex justify-center lg:justify-end">
-              <PhotoPlaceholder />
+            {/* Main Headline */}
+            <h1 className="text-[38px] sm:text-[56px] lg:text-[72px] font-extrabold text-white tracking-[-0.035em] leading-[1.08] mb-6">
+              A business that does not<br />
+              need <span className="italic gradient-text">you</span> in the room.
+            </h1>
+
+            {/* Subheadline Tagline */}
+            <p className="text-[20px] sm:text-[24px] text-neutral-300 mb-6 font-semibold tracking-tight">
+              <span className="text-blue-400 font-bold">AI</span> to build.{" "}
+              <span className="text-blue-400 font-bold">Automation</span> to run.{" "}
+              <span className="text-blue-400 font-bold">Systems</span> to scale.
+            </p>
+
+            {/* Target Audience & Pitch Description */}
+            <p className="text-[16px] sm:text-[18px] text-neutral-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+              For founder-led service and mid-market companies (India & Worldwide), where daily operational follow-ups, fragmented spreadsheets, and approvals still bottleneck through leadership.
+            </p>
+
+            {/* Hero CTAs */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mb-14">
+              <Link
+                href="/contact"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full btn-primary text-white font-semibold text-base hover:opacity-95 transition-all"
+              >
+                Work with me
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+              <Link
+                href="/work"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full glass-panel text-white font-medium hover:bg-white/10 transition-colors border border-white/10 text-base"
+              >
+                Explore case studies
+              </Link>
+            </div>
+
+            {/* Micro Trust Indicators */}
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-mono text-neutral-400">
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="h-3.5 w-3.5 text-blue-400" />
+                Zero Agency Markup
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="h-3.5 w-3.5 text-blue-400" />
+                Fixed-Price Sprints
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="h-3.5 w-3.5 text-blue-400" />
+                100% Code & IP Ownership
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="h-3.5 w-3.5 text-blue-400" />
+                US, UK, UAE & India Timezones
+              </span>
             </div>
           </div>
         </Container>
       </section>
 
-      {/* 2. GLOBAL TRUST STRIP */}
-      <section className="border-y border-[#E7E5E4] bg-[#FAFAF9]/90 backdrop-blur-sm py-4 text-[#57534E]">
+      {/* 2. SOCIAL PROOF & CAPABILITIES STRIP */}
+      <section className="border-y border-white/10 bg-[#0e0e0e] py-8 text-neutral-400">
         <Container>
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-[13px] sm:text-[14px] text-center font-medium">
-            <span className="text-[#0C0A09] font-semibold flex items-center gap-1.5">
-              <Workflow className="h-4 w-4 text-[#1D4ED8]" /> Enterprise n8n Pipelines
-            </span>
-            <span className="hidden sm:inline text-[#A8A29E]" aria-hidden="true">·</span>
-            <span className="text-[#0C0A09] font-semibold flex items-center gap-1.5">
-              <BarChart3 className="h-4 w-4 text-[#1D4ED8]" /> Real-Time Executive BI
-            </span>
-            <span className="hidden sm:inline text-[#A8A29E]" aria-hidden="true">·</span>
-            <span className="text-[#0C0A09] font-semibold flex items-center gap-1.5">
-              <Layers className="h-4 w-4 text-[#1D4ED8]" /> Custom In-House SaaS
-            </span>
-            <span className="hidden sm:inline text-[#A8A29E]" aria-hidden="true">·</span>
-            <span className="text-[#0C0A09] font-semibold flex items-center gap-1.5">
-              <Database className="h-4 w-4 text-[#1D4ED8]" /> ERP & API Integration
-            </span>
+          <div className="text-center mb-6">
+            <p className="text-xs font-mono uppercase tracking-widest text-neutral-500">
+              PROVEN ENTERPRISE ARCHITECTURE & IMPLEMENTATION STACK
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 items-center">
+            <div className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-4 text-center hover:border-blue-500/30 transition-colors">
+              <Workflow className="h-5 w-5 text-blue-400 mx-auto mb-2" />
+              <p className="text-sm font-semibold text-white">n8n Orchestration</p>
+              <p className="text-xs text-neutral-500 font-mono mt-0.5">Self-Hosted Workflows</p>
+            </div>
+            <div className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-4 text-center hover:border-blue-500/30 transition-colors">
+              <BarChart3 className="h-5 w-5 text-blue-400 mx-auto mb-2" />
+              <p className="text-sm font-semibold text-white">Executive BI Hub</p>
+              <p className="text-xs text-neutral-500 font-mono mt-0.5">Real-Time Data Pipelines</p>
+            </div>
+            <div className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-4 text-center hover:border-blue-500/30 transition-colors">
+              <Layers className="h-5 w-5 text-blue-400 mx-auto mb-2" />
+              <p className="text-sm font-semibold text-white">In-House SaaS Apps</p>
+              <p className="text-xs text-neutral-500 font-mono mt-0.5">Next.js & PostgreSQL</p>
+            </div>
+            <div className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-4 text-center hover:border-blue-500/30 transition-colors">
+              <Database className="h-5 w-5 text-blue-400 mx-auto mb-2" />
+              <p className="text-sm font-semibold text-white">ERP & API Connectors</p>
+              <p className="text-xs text-neutral-500 font-mono mt-0.5">Bi-Directional Sync</p>
+            </div>
           </div>
         </Container>
       </section>
 
-      {/* 3. THE PROBLEM WE SOLVE */}
+      {/* 3. WHERE OPERATIONS BREAK DOWN */}
       <Section
         eyebrow="The Bottlenecks"
         title="Where operations break down."
-        description="Most growing companies have plenty of tools. The breakdown happens in the manual gaps between them."
+        description="Most mid-sized companies have plenty of software tools. The breakdown happens in the manual gaps between them."
       >
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {/* Problem 01 */}
-          <div className="border border-[#E7E5E4] rounded-[12px] p-6 sm:p-8 bg-white space-y-4 hover:border-[#1D4ED8] hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
-            <span className="text-[26px] font-bold text-[#1D4ED8] font-mono">
-              01
-            </span>
-            <h3 className="text-[19px] font-semibold text-[#0C0A09]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="glass-panel-card rounded-[16px] p-6 sm:p-8 space-y-4">
+            <span className="text-[26px] font-bold text-blue-400 font-mono">01</span>
+            <h3 className="text-[19px] font-bold text-white">
               Fragmented Data & Blind Spots
             </h3>
-            <p className="text-[15px] text-[#57534E] leading-relaxed">
+            <p className="text-[15px] text-neutral-400 leading-relaxed">
               Critical numbers live scattered across five spreadsheets and buried inbox threads. By the time leadership gets a report, it is already outdated.
             </p>
           </div>
 
-          {/* Problem 02 */}
-          <div className="border border-[#E7E5E4] rounded-[12px] p-6 sm:p-8 bg-white space-y-4 hover:border-[#1D4ED8] hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
-            <span className="text-[26px] font-bold text-[#1D4ED8] font-mono">
-              02
-            </span>
-            <h3 className="text-[19px] font-semibold text-[#0C0A09]">
+          <div className="glass-panel-card rounded-[16px] p-6 sm:p-8 space-y-4">
+            <span className="text-[26px] font-bold text-blue-400 font-mono">02</span>
+            <h3 className="text-[19px] font-bold text-white">
               Manual Data Re-Entry Layers
             </h3>
-            <p className="text-[15px] text-[#57534E] leading-relaxed">
-              Staff spend half their week copying data between software, chasing approvals on chat apps, and re-keying identical records.
+            <p className="text-[15px] text-neutral-400 leading-relaxed">
+              Staff spend half their week copying data between software, chasing approvals on chat apps, and re-keying identical records across systems.
             </p>
           </div>
 
-          {/* Problem 03 */}
-          <div className="border border-[#E7E5E4] rounded-[12px] p-6 sm:p-8 bg-white space-y-4 hover:border-[#1D4ED8] hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
-            <span className="text-[26px] font-bold text-[#1D4ED8] font-mono">
-              03
-            </span>
-            <h3 className="text-[19px] font-semibold text-[#0C0A09]">
+          <div className="glass-panel-card rounded-[16px] p-6 sm:p-8 space-y-4">
+            <span className="text-[26px] font-bold text-blue-400 font-mono">03</span>
+            <h3 className="text-[19px] font-bold text-white">
               Expensive SaaS Bloat & Low Adoption
             </h3>
-            <p className="text-[15px] text-[#57534E] leading-relaxed">
+            <p className="text-[15px] text-neutral-400 leading-relaxed">
               Paying expensive per-seat subscriptions for commercial tools that nobody on the frontline uses because they do not match real operating workflows.
             </p>
           </div>
         </div>
       </Section>
 
-      {/* 4. CORE CAPABILITIES */}
+      {/* 4. SOLUTIONS I BUILD */}
       <Section
         surface
         eyebrow="Solutions"
@@ -296,7 +295,7 @@ export default async function HomePage() {
         </div>
       </Section>
 
-      {/* 5. WHY WORK WITH ME */}
+      {/* 5. WHY CHOOSE AN INDEPENDENT SPECIALIST */}
       <Section
         eyebrow="Why Choose An Independent Specialist"
         title="Senior execution. Predictable outcomes."
@@ -308,16 +307,16 @@ export default async function HomePage() {
             return (
               <div
                 key={idx}
-                className="rounded-[12px] border border-[#E7E5E4] bg-white p-6 hover:border-[#1D4ED8] hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 flex flex-col justify-between"
+                className="rounded-[16px] glass-panel-card p-6 flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#EFF6FF] text-[#1D4ED8] mb-4">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400 mb-4 border border-blue-500/20">
                     <Icon className="h-5 w-5" />
                   </div>
-                  <h3 className="text-[17px] font-semibold text-[#0C0A09] mb-2">
+                  <h3 className="text-[17px] font-bold text-white mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-[14px] text-[#57534E] leading-relaxed">
+                  <p className="text-[14px] text-neutral-400 leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -345,55 +344,57 @@ export default async function HomePage() {
         </div>
 
         <div className="mt-12 text-center">
-          <Button asChild variant="secondary" size="lg" className="border border-[#E7E5E4] bg-white">
-            <Link href="/work">
-              View All Case Studies & Results
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
+          <Link
+            href="/work"
+            className="inline-flex items-center justify-center px-8 py-3.5 rounded-full glass-panel text-white font-semibold hover:bg-white/10 transition-colors border border-white/10"
+          >
+            View All Case Studies & Results
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Link>
         </div>
       </Section>
 
-      {/* 7. HOW WE WORK TOGETHER */}
+      {/* 7. HOW AN ENGAGEMENT WORKS */}
       <Section
         eyebrow="Process"
         title="How an engagement works."
         description="A transparent, low-risk process designed for speed, clarity, and zero consultant lock-in."
       >
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {processSteps.map((step) => (
             <div
               key={step.number}
-              className="border border-[#E7E5E4] rounded-[12px] p-6 sm:p-8 bg-white space-y-4 hover:border-[#1D4ED8] hover:shadow-xs transition-all"
+              className="glass-panel-card rounded-[16px] p-6 sm:p-8 space-y-4"
             >
-              <span className="text-[28px] font-bold text-[#1D4ED8] font-mono">
+              <span className="text-[28px] font-bold text-blue-400 font-mono">
                 {step.number}
               </span>
-              <h3 className="text-[19px] font-semibold text-[#0C0A09]">
+              <h3 className="text-[19px] font-bold text-white">
                 {step.title}
               </h3>
-              <p className="text-[15px] text-[#57534E] leading-relaxed">
+              <p className="text-[15px] text-neutral-400 leading-relaxed">
                 {step.description}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="mt-10 rounded-[12px] border border-[#BFDBFE] bg-[#EFF6FF] p-6 sm:p-8 text-center flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-10 rounded-[16px] border border-blue-500/30 bg-blue-950/20 p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-4 backdrop-blur-md">
           <div className="text-left">
-            <h4 className="text-[17px] font-semibold text-[#0C0A09]">
+            <h4 className="text-[18px] font-bold text-white">
               Have a specific workflow bottleneck in mind?
             </h4>
-            <p className="text-[14.5px] text-[#57534E] mt-0.5">
+            <p className="text-[14.5px] text-neutral-400 mt-1">
               Let&apos;s evaluate the technical requirements and approximate timeline together.
             </p>
           </div>
-          <Button asChild size="lg" className="shrink-0">
-            <Link href="/contact">
-              Schedule a 15-min chat
-              <ArrowRight className="ml-1.5 h-4 w-4" />
-            </Link>
-          </Button>
+          <Link
+            href="/contact"
+            className="shrink-0 px-6 py-3 rounded-full btn-primary text-white text-sm font-semibold hover:opacity-95 transition-all"
+          >
+            Schedule a 15-min chat
+            <ArrowRight className="inline-block ml-1.5 h-4 w-4" />
+          </Link>
         </div>
       </Section>
 
@@ -416,22 +417,23 @@ export default async function HomePage() {
           </div>
 
           <div className="mt-10 text-center">
-            <Button asChild variant="secondary">
-              <Link href="/blog">
-                Read all articles
-                <ArrowRight className="ml-1.5 h-4 w-4" />
-              </Link>
-            </Button>
+            <Link
+              href="/blog"
+              className="inline-flex items-center justify-center px-6 py-2.5 rounded-full glass-panel text-white font-medium hover:bg-white/10 transition-colors border border-white/10"
+            >
+              Read all articles
+              <ArrowRight className="ml-1.5 h-4 w-4" />
+            </Link>
           </div>
         </Section>
       )}
 
-      {/* 9. HIGH-CONVERTING BOTTOM CTA BAND */}
+      {/* 9. BOTTOM CTA BAND */}
       <CTABand
-        title="Ready to automate your operations?"
-        description="Whether you have an approval backlog, fragmented reporting, or need a second opinion on systems architecture, let's look at one problem together."
+        title="Ready to build operations that run without you?"
+        description="Whether you have an approval backlog, fragmented reporting, or need a second opinion on systems architecture, let's diagnose it together."
         primaryAction={{
-          label: "Book a 30-min discovery call",
+          label: "Work with me",
           href: "/contact",
         }}
         secondaryAction={{

@@ -29,27 +29,27 @@ export function Section({
     <section
       id={id}
       className={cn(
-        "py-20 lg:py-32 scroll-mt-24",
-        surface ? "bg-[#FAFAF9]" : "bg-white",
+        "py-20 lg:py-28 scroll-mt-24 relative",
+        surface ? "bg-[#161616] border-y border-white/[0.06]" : "bg-[#131313]",
         className
       )}
       {...props}
     >
       <Container className={containerClassName}>
         {(eyebrow || title || description) && (
-          <div className={cn("mb-12 lg:mb-16", headerClassName)}>
+          <div className={cn("mb-12 lg:mb-16 max-w-3xl", headerClassName)}>
             {eyebrow && (
-              <p className="text-[12px] font-medium uppercase tracking-[0.09em] text-[#A8A29E] mb-3">
+              <p className="text-[12px] font-mono font-semibold uppercase tracking-widest text-blue-400 mb-3">
                 {eyebrow}
               </p>
             )}
             {title && (
-              <h2 className="text-[28px] sm:text-[34px] lg:text-[36px] font-semibold tracking-[-0.02em] text-[#0C0A09] leading-tight">
+              <h2 className="text-[28px] sm:text-[36px] lg:text-[40px] font-bold tracking-[-0.03em] text-white leading-tight">
                 {title}
               </h2>
             )}
             {description && (
-              <p className="mt-4 text-[17px] text-[#57534E] leading-relaxed max-w-[68ch]">
+              <p className="mt-4 text-[16px] sm:text-[17px] text-neutral-400 leading-relaxed max-w-[65ch]">
                 {description}
               </p>
             )}
